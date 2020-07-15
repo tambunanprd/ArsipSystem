@@ -50,6 +50,7 @@ public class Home extends javax.swing.JFrame {
         btnHapus = new javax.swing.JButton();
         txtCari = new javax.swing.JLabel();
         txtCarii = new javax.swing.JTextField();
+        btnReload = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,6 +95,13 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnReload.setText("Reload");
+        btnReload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReloadActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,7 +119,10 @@ public class Home extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCari)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCarii)))
+                        .addComponent(txtCarii))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnReload)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -128,7 +139,10 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtCarii, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtCari)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnReload)
                 .addContainerGap())
         );
 
@@ -136,7 +150,7 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
-        // TODO add your handling code here:
+       
         JTextField txtNama = new JTextField(15);
         JTextField txtHarga = new JTextField(15);
         
@@ -144,16 +158,21 @@ public class Home extends javax.swing.JFrame {
         myPanel.setLayout(new GridLayout(2,2,0,10));
         myPanel.add(new JLabel("Username"));
         myPanel.add(txtNama);
-        myPanel.add(new JLabel("File"));
+        myPanel.add(new JLabel("file"));
         myPanel.add(txtHarga);
-        int result = JOptionPane.showConfirmDialog(this, myPanel, "Input file baru", JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
-        if(result == JOptionPane.OK_OPTION){
+        
+        int result = JOptionPane.showConfirmDialog(this, myPanel, 
+                "Input File Baru",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+        
+        if (result == JOptionPane.OK_OPTION) {
             try {
                 Statement stmt = conn.createStatement();
-                stmt.executeUpdate("INSERT INTO arsip(username, file)"+"VALUES('"+txtNama.getText()+"','"+txtHarga.getText()+"')");
-                loadTabelProduk();    
-            }
-            catch (SQLException e){
+                stmt.executeUpdate("INSERT INTO arsip(username,file)" +
+                        " VALUES('" + txtNama.getText() + "', '" +
+                        txtHarga.getText() + "')");
+                loadTabelProduk();
+            } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -162,7 +181,7 @@ int selectedID;
     private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
         // TODO add your handling code here:
         if(tbProdukk.isRowSelected(tbProdukk.getSelectedRow())==true){
-        selectedID = (int) tbProdukk.getValueAt(tbProdukk.getSelectedRow(),1);
+        selectedID = (int) tbProdukk.getValueAt(tbProdukk.getSelectedRow(),0);
         JTextField txtNama = new JTextField(15);
         JTextField txtHarga = new JTextField(15);
         txtNama.setText(tbProdukk.getValueAt(tbProdukk.getSelectedRow(),1).toString());
@@ -227,6 +246,11 @@ int selectedID;
             loadTabelProduk(teks);
         }
     }//GEN-LAST:event_txtCariiKeyPressed
+
+    private void btnReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReloadActionPerformed
+        // TODO add your handling code here:
+        loadTabelProduk();
+    }//GEN-LAST:event_btnReloadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,6 +337,7 @@ int selectedID;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHapus;
+    private javax.swing.JButton btnReload;
     private javax.swing.JButton btnTambah;
     private javax.swing.JButton btnUbah;
     private javax.swing.JScrollPane jScrollPane1;
