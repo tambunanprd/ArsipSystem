@@ -151,31 +151,32 @@ public class Home extends javax.swing.JFrame {
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
        
-        JTextField txtNama = new JTextField(15);
-        JTextField txtHarga = new JTextField(15);
+       // JTextField txtNama = new JTextField(15);
+        //JTextField txtHarga = new JTextField(15);
         
-        JPanel myPanel = new JPanel();
-        myPanel.setLayout(new GridLayout(2,2,0,10));
-        myPanel.add(new JLabel("Username"));
-        myPanel.add(txtNama);
-        myPanel.add(new JLabel("file"));
-        myPanel.add(txtHarga);
+//        JPanel myPanel = new JPanel();
+  //      myPanel.setLayout(new GridLayout(2,2,0,10));
+    //    myPanel.add(new JLabel("Username"));
+     //   myPanel.add(txtNama);
+      //  myPanel.add(new JLabel("file"));
+       // myPanel.add(txtHarga);
+        new Kripto_UI().setVisible(true);
+        this.dispose();
+       // int result = JOptionPane.showConfirmDialog(this, myPanel, 
+         //       "Input File Baru",
+           //     JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         
-        int result = JOptionPane.showConfirmDialog(this, myPanel, 
-                "Input File Baru",
-                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-        
-        if (result == JOptionPane.OK_OPTION) {
-            try {
-                Statement stmt = conn.createStatement();
-                stmt.executeUpdate("INSERT INTO arsip(username,file)" +
-                        " VALUES('" + txtNama.getText() + "', '" +
-                        txtHarga.getText() + "')");
-                loadTabelProduk();
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-        }
+      //  if (result == JOptionPane.OK_OPTION) {
+        //    try {
+          //      Statement stmt = conn.createStatement();
+            //    stmt.executeUpdate("INSERT INTO arsip(username,file)" +
+             //           " VALUES('" + txtNama.getText() + "', '" +
+              //          txtHarga.getText() + "')");
+               // loadTabelProduk();
+           // } catch (SQLException e) {
+             //   System.out.println(e.getMessage());
+            //}
+        //}
     }//GEN-LAST:event_btnTambahActionPerformed
 int selectedID;
     private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
