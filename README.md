@@ -41,7 +41,7 @@ $ ./awipa.sh
 
 ### Registrasi
 jika anda belum memiliki akun maka lakukan registrasi dengan melakukan klik pada tulisan di bawah tombol login\
-![](dokumentasi/registrasi/1.jpg)
+![](dokumentasi/registrasi/1a.jpg)
 1. masukkan email dan password yang ingin anda daftarkan, lalu klik send code\
 ![](dokumentasi/registrasi/2.jpg)
 2. buka email yang kamu daftarkan untuk mendapatkan kode otp\
