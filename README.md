@@ -83,7 +83,7 @@ pada fitur ini *user* dapat mendownload kembali file yang pernah di upload pada 
 *user* dapat melakukan logout pada aplikasi setelah melakukan login.
 
 ### Uninstall
-dapat dilakukan uninstall aplikasi dengan cara masuk ke folder hasil instalasi
+dapat dilakukan uninstall aplikasi dengan cara masuk ke folder hasil instalasi, buka terminal dari folder tersebut
 ```c
 $ ./uninstall
 ```
