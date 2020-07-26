@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2020 at 05:37 PM
+-- Generation Time: Jul 26, 2020 at 04:16 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.2.22
 
@@ -19,9 +19,9 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `toko`
---
-
+-- Database: `arsipawipa`
+CREATE DATABASE IF NOT EXISTS `arsipawipa`;
+USE `arsipawipa`;
 -- --------------------------------------------------------
 
 --
@@ -39,7 +39,9 @@ CREATE TABLE `download` (
 --
 
 INSERT INTO `download` (`id`, `username`, `link`) VALUES
-(12, 'bejo', '/home/tam/signal.enc');
+(1, 'hjsfhaskjfh', '/home/tam/pipa'),
+(2, 'jashkjhasjkhas', '/home/tam/Proposal Tugas Akhir - Andi Parada Tambunan - 1716101280.pdf'),
+(3, 'punyaku', '/home/tam/Proposal Tugas Akhir - Andi Parada Tambunan - 1716101280.pdf.enc');
 
 -- --------------------------------------------------------
 
@@ -59,8 +61,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `salt`) VALUES
-(7, 'anditambunan1@gmail.com', '49727731b2dcb4a0d3afbca9d7de5f50eb52ead08f690d5652ef4f86555835c6', 'fpiomorvib'),
-(8, 'tambunanprd@gmail.com', '49727731b2dcb4a0d3afbca9d7de5f50eb52ead08f690d5652ef4f86555835c6', 'peqnfnoxvh');
+(1, 'anditambunan1@gmail.com', '49727731b2dcb4a0d3afbca9d7de5f50eb52ead08f690d5652ef4f86555835c6', 'jhzvfqqgkc');
 
 --
 -- Indexes for dumped tables
@@ -76,8 +77,7 @@ ALTER TABLE `download`
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`username`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -87,13 +87,13 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `download`
 --
 ALTER TABLE `download`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

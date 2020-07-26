@@ -78,7 +78,7 @@ public class signup extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(152, 26, 23));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/tam/NetBeansProjects/ArsipSistem/output-onlinepngtools.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/tam/NetBeansProjects/ArsipSistem/Screenshot from 2020-07-25 21-09-04.png")); // NOI18N
         jLabel1.setText("jLabel1");
 
         jLabel2.setFont(new java.awt.Font("Chandas", 1, 18)); // NOI18N
@@ -277,15 +277,15 @@ public class signup extends javax.swing.JFrame {
             catch (SQLException e){
                 System.out.println(e.getMessage());
             }
-            JOptionPane.showMessageDialog(null, "you are login successfully ");
+            JOptionPane.showMessageDialog(null, "you are sign up successfully ");
             new login().setVisible(true);
             this.dispose();
         }else{
-        JOptionPane.showMessageDialog(null, "you are login failed ");
+        JOptionPane.showMessageDialog(null, "you are sign up failed ");
         
         }
          }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "you are login failed ");
+            JOptionPane.showMessageDialog(null, "you are sign up failed ");
         
         }
         
@@ -365,6 +365,8 @@ public class signup extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             signup.sendMail(email);
+             JOptionPane.showMessageDialog(null, "Code sent to your email");
+            
         } catch (MessagingException ex) {
             Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
         }

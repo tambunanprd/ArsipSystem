@@ -44,7 +44,7 @@ public class UI extends javax.swing.JFrame {
         initComponents();
         loadTabelUser();
     }
-    private static final String ACCESS_TOKEN = "gaFanlksXxAAAAAAAAAAaukswiGw3nEm7hPDRT-urVVxXJm2gcejAxihubqZRima";
+    private static final String ACCESS_TOKEN = "gaFanlksXxAAAAAAAAAAc_8PyxtRrQCPhPJCbZfqGnam1IMxMAe0ZMU7uvfangO8";
     DbxRequestConfig config = new DbxRequestConfig("dropbox/java-tutorial", "en_US");
     DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
     Connection conn = Koneksi.connectDB();
@@ -111,6 +111,7 @@ public class UI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,7 +146,7 @@ public class UI extends javax.swing.JFrame {
 
         chkRemove.setText("Hapus file asli?");
 
-        btnUpload.setBackground(new java.awt.Color(1, 22, 123));
+        btnUpload.setBackground(new java.awt.Color(53, 80, 209));
         btnUpload.setText("Upload");
         btnUpload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,6 +251,14 @@ public class UI extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon("/home/tam/NetBeansProjects/ArsipSistem/Screenshot from 2020-07-23 22-23-19.png")); // NOI18N
 
+        jButton1.setBackground(new java.awt.Color(34, 206, 19));
+        jButton1.setText("Logout");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -278,8 +287,13 @@ public class UI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)))
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -296,7 +310,9 @@ public class UI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1)
+                                .addContainerGap())
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtFile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -481,6 +497,12 @@ int selectedID;
             }
     }//GEN-LAST:event_btnDownloadActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new login().setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -529,6 +551,7 @@ int selectedID;
     private javax.swing.JButton btnUpload;
     private javax.swing.JCheckBox chkRemove;
     private javax.swing.JFileChooser fileChooser;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

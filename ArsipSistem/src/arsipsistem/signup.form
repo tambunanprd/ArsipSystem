@@ -102,7 +102,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/home/tam/NetBeansProjects/ArsipSistem/output-onlinepngtools.png"/>
+                  <Image iconType="2" name="/home/tam/NetBeansProjects/ArsipSistem/Screenshot from 2020-07-25 21-09-04.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>

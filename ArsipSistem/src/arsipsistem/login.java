@@ -63,7 +63,7 @@ public class login extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(152, 26, 23));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/tam/NetBeansProjects/ArsipSistem/output-onlinepngtools.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/tam/NetBeansProjects/ArsipSistem/Screenshot from 2020-07-25 21-09-04.png")); // NOI18N
         jLabel1.setText("jLabel1");
 
         jLabel2.setFont(new java.awt.Font("Chandas", 1, 18)); // NOI18N
@@ -219,7 +219,8 @@ public class login extends javax.swing.JFrame {
     Connection conn = Koneksi.connectDB();
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-         try {
+        //JOptionPane.showMessageDialog(null, "Please enter your identity");
+        try {
         String sql = "SELECT * FROM login WHERE username='" + 
                 fieldEmail.getText() +"'";
         Statement stmt = conn.createStatement();
@@ -245,7 +246,8 @@ public class login extends javax.swing.JFrame {
             }
         }
    
-    } catch (SQLException e){
+    } catch (Exception e){
+        JOptionPane.showMessageDialog(null, "login gagal");
         System.out.println(e.getMessage());
     }
     }//GEN-LAST:event_btnLoginActionPerformed

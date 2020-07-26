@@ -17,7 +17,7 @@ public class Koneksi {
     public static Connection conn ; 
     public static void main(String args[]){
     try{
-    String url = "jdbc:mysql://localhost/toko";
+    String url = "jdbc:mysql://localhost/arsipawipa";
     String user = "root"; 
     String pass = "";
     conn = (Connection) DriverManager.getConnection(url,user,pass);
@@ -29,7 +29,7 @@ public class Koneksi {
     }
     
     public static Connection connectDB() {
-    String url = "jdbc:mysql://localhost/toko";
+    String url = "jdbc:mysql://localhost/arsipawipa";
     String user = "root"; 
     String pass = "";
     try{
